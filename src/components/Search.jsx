@@ -25,7 +25,7 @@ const Search = ({ users, setUsers }) => {
     if (users.length > 0) {
       fetchUserData();
     }
-  }, [users]); // Watch for changes in users state
+  }, [users]);
 
   const fetchUserData = async () => {
     try {
@@ -35,10 +35,10 @@ const Search = ({ users, setUsers }) => {
             `https://api.github.com/users/${user.login}`
           );
           const data = await response.json();
-          return { ...user, name: data.name }; // Merge user with updated name
+          return { ...user, name: data.name };
         })
       );
-      setUsers(updatedUsersData); // Update users state with new data
+      setUsers(updatedUsersData);
     } catch (error) {
       console.error("Error occurred while fetching user data:", error);
     }

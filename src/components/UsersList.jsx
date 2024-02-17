@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const UsersList = ({ users, setUsers }) => {
   if (!users) {
-    return <div>Users data not loaded yet</div>; // Return null if users are not available
+    return <div>Users data not loaded yet</div>;
   }
 
   return (
